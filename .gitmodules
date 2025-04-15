@@ -1,0 +1,6 @@
+[submodule "AllegroLikeServer"]
+	path = AllegroLikeServer
+	url = git@github.com:JakubGralinski/AllegroLikeServer.git
+[submodule "AllegroLikeClient"]
+	path = AllegroLikeClient
+	url = git@github.com:JakubGralinski/AllegroLikeClient.git
