@@ -157,19 +157,19 @@ _Placeholder: Insert ERD diagram image here._
 
 ## 13. List of Used Technologies
 
-| Technology  | Where Used   | Purpose                  |
-| ----------- | ------------ | ------------------------ |
-| React       | Frontend     | UI development           |
-| TypeScript  | Frontend     | Type safety              |
-| Spring Boot | Backend      | REST API, business logic |
-| Java        | Backend      | Core backend language    |
-| PostgreSQL  | Database     | Data storage             |
-| Liquibase   | Backend      | Database versioning      |
-| Docker      | DevOps       | Containerization         |
-| JWT         | Backend/Auth | User authentication      |
-| bcrypt      | Backend/Auth | Password hashing         |
-| Vite        | Frontend     | Build tool               |
-| ...         | ...          | ...                      |
+| Technology     | Where Used   | Purpose                  |
+| -------------- | ------------ | ------------------------ |
+| React          | Frontend     | UI development           |
+| TypeScript     | Frontend     | Type safety              |
+| Spring Boot    | Backend      | REST API, business logic |
+| Java           | Backend      | Core backend language    |
+| PostgreSQL     | Database     | Data storage             |
+| Liquibase      | Backend      | Database versioning      |
+| Docker         | DevOps       | Containerization         |
+| JWT            | Backend/Auth | User authentication      |
+| bcrypt         | Backend/Auth | Password hashing         |
+| Vite           | Frontend     | Build tool               |
+| Github Actions | DevOps       | CI tool                  |
 
 ---
 
