@@ -1,0 +1,39 @@
+services:
+  allegrolike_db:
+    container_name: allegrolike_db
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    env_file:
+      - db.env
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  allegrolike_server:
+    container_name: allegrolike_server
+    build:
+      context: ./AllegroLikeServer
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=allegrolike_db
+      - DB_PORT=3306
+      - CLIENT_ORIGIN=http://localhost:5173
+    env_file:
+      - server.env
+    depends_on:
+      - allegrolike_db
+
+  allegrolike_client:
+    container_name: allegrolike_client
+    build:
+      context: ./AllegroLikeClient
+    ports:
+      - "5173:5173"
+    environment:
+      - SERVER_URL=http://allegrolike_server:8080
+    depends_on:
+      - allegrolike_server
+
+volumes:
+  mysql_data:
