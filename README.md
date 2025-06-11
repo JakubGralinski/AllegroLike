@@ -250,7 +250,7 @@ Before setting up the project, ensure you have the following installed:
 3. **Start the database**:
    ```bash
    cd AllegroLikeServer
-   docker-compose up -d mysql_db
+   docker-compose up -d
    ```
 
 4. **Build and run the backend**:
@@ -277,7 +277,7 @@ Before setting up the project, ensure you have the following installed:
 
 2. **Set up the database**:
    ```bash
-   docker-compose up -d mysql_db
+   docker-compose up -d
    ```
 
 3. **Run the Spring Boot application**:
@@ -519,7 +519,7 @@ cd AllegroLikeServer
 ./gradlew check
 ```
 
-### CI/CD Pipeline
+### CI Pipeline
 
 The project includes GitHub Actions workflows for automated testing:
 
@@ -561,52 +561,18 @@ The project includes GitHub Actions workflows for automated testing:
    - Create new controllers in `controllers/`
    - Add database migrations in `resources/db/changelog/`
 
----
-
-## 🤝 Contributing
-
-We welcome contributions to AllegroLike! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/your-feature-name`
-3. **Make your changes** and ensure tests pass
-4. **Commit your changes**: `git commit -m 'Add some feature'`
-5. **Push to the branch**: `git push origin feature/your-feature-name`
-6. **Submit a pull request**
-
-### Development Guidelines
-- Follow existing code style and conventions
-- Write comprehensive tests for new features
-- Update documentation as needed
-- Ensure all CI/CD checks pass
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 👥 Authors
 
-- **Jakub Gralinski** - *Project Creator* - [@JakubGralinski](https://github.com/JakubGralinski)
-
----
-
-## 🙏 Acknowledgments
-
-- Thanks to the React and Spring Boot communities for excellent documentation
-- Material-UI team for the comprehensive component library
-- D3.js team for powerful data visualization capabilities
-- All contributors who have helped improve this project
+- **Jakub Gralinski** - [@JakubGralinski](https://github.com/JakubGralinski)
+- **Mateusz Laskowski** - [@mlaskowski7](https://github.com/mlaskowski7)
 
 ---
 
 <div align="center">
 
-**⭐ If you found this project helpful, please give it a star!**
-
-Made with ❤️ by [Jakub Gralinski](https://github.com/JakubGralinski)
+Made with 🔥
 
 </div>
