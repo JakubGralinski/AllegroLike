@@ -40,7 +40,7 @@
 
 For the most comprehensive and detailed documentation, including:
 - **Detailed System Architecture** with UML diagrams
-- **Complete Database Design** with ERD diagrams  
+- **Complete Database Design** with ERD diagrams
 - **User Interface Mockups** and wireframes
 - **Technical Specifications** and requirements
 - **Implementation Details** and design decisions
@@ -107,24 +107,24 @@ graph TB
         B --> F[Cart Slice]
         B --> G[Products Slice]
     end
-    
+
     subgraph "Backend (Spring Boot + Java)"
         H[Spring Boot App] --> I[REST Controllers]
         I --> J[Service Layer]
         J --> K[Repository Layer]
         K --> L[JPA Entities]
     end
-    
+
     subgraph "Database"
         M[(MySQL Database)]
         N[Liquibase Migrations]
     end
-    
+
     subgraph "External Services"
         O[File Storage]
         P[Image Upload]
     end
-    
+
     A -->|HTTP/REST| I
     L -->|JPA/Hibernate| M
     N -->|Migration Scripts| M
@@ -509,41 +509,22 @@ The ERD above illustrates:
    # Backend
    cd AllegroLikeServer
    docker build -t allegrolike-server:prod .
-   
+
    # Frontend
-   cd ../AllegroLikeClient  
+   cd ../AllegroLikeClient
    docker build -t allegrolike-client:prod .
    ```
 
-2. **Deploy with Docker Compose**:
-   ```yaml
-   services:
-     frontend:
-       image: allegrolike-client:prod
-       ports:
-         - "80:5173"
-     
-     backend:
-       image: allegrolike-server:prod
-       ports:
-         - "8080:8080"
-       environment:
-         - SPRING_PROFILES_ACTIVE=prod
-         - DATABASE_URL=jdbc:mysql://database:3306/allegrolike
-       depends_on:
-         - database
-     
-     database:
-       image: mysql:latest
-       environment:
-         - MYSQL_ROOT_PASSWORD=your_password
-         - MYSQL_DATABASE=allegrolike
-       volumes:
-         - mysql_data:/var/lib/mysql
-   
-   volumes:
-     mysql_data:
-   ```
+2. **Run with Docker Compose**:
+
+Ensure to create `server.env` and `db.env`, accordingly to `server.env.example` and `db.env.example`
+
+```bash
+# ensure submodules are updated
+git submodule update --remote --merge
+
+docker compose up --build
+```
 
 ### Environment Variables
 
@@ -638,6 +619,9 @@ The project includes GitHub Actions workflows for automated testing:
 - **Mateusz Laskowski** - [@mlaskowski7](https://github.com/mlaskowski7)
 
 ---
+
+## Credits
+- open-source script used for db health-check in compose setup -> https://github.com/vishnubob/wait-for-it/blob/master/wait-for-it.sh
 
 <div align="center">
 
