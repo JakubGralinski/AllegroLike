@@ -517,7 +517,6 @@ The ERD above illustrates:
 
 2. **Deploy with Docker Compose**:
    ```yaml
-   version: '3.8'
    services:
      frontend:
        image: allegrolike-client:prod
