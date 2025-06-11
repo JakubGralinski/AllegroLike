@@ -2,14 +2,12 @@
 
 <div align="center">
 
-![AllegroLike Logo](./AllegroLikeUseCase.png)
-
 [![Build Status](https://github.com/JakubGralinski/AllegroLikeClient/workflows/Build%20check%20workflow/badge.svg)](https://github.com/JakubGralinski/AllegroLikeClient/actions)
 [![Java Tests](https://github.com/JakubGralinski/AllegroLikeServer/workflows/Java+Gradle%20tests/badge.svg)](https://github.com/JakubGralinski/AllegroLikeServer/actions)
 
 **A full-stack e-commerce platform built with React TypeScript frontend and Spring Boot backend**
 
-[Features](#-features) • [Architecture](#-architecture) • [Setup](#-setup) • [Usage](#-usage) • [API](#-api-documentation) • [Contributing](#-contributing)
+📄 **[Complete Documentation (PDF)](./docs.pdf)** | [Features](#-features) • [Architecture](#-architecture) • [Setup](#-setup) • [Usage](#-usage) • [API](#-api-documentation) • [Contributing](#-contributing)
 
 </div>
 
@@ -17,9 +15,11 @@
 
 ## 📋 Table of Contents
 
+- [📄 Complete Documentation (PDF)](#-complete-documentation-pdf)
 - [Overview](#-overview)
 - [Features](#-features)
 - [Architecture](#-architecture)
+- [System Diagrams](#-system-diagrams)
 - [Technology Stack](#-technology-stack)
 - [Project Structure](#-project-structure)
 - [Prerequisites](#-prerequisites)
@@ -31,6 +31,22 @@
 - [Testing](#-testing)
 - [Contributing](#-contributing)
 - [License](#-license)
+
+---
+
+## 📄 Complete Documentation (PDF)
+
+📋 **[Download Complete Project Documentation](./docs.pdf)**
+
+For the most comprehensive and detailed documentation, including:
+- **Detailed System Architecture** with UML diagrams
+- **Complete Database Design** with ERD diagrams  
+- **User Interface Mockups** and wireframes
+- **Technical Specifications** and requirements
+- **Implementation Details** and design decisions
+- **Testing Strategies** and quality assurance
+- **Deployment Architecture** and infrastructure setup
+
 
 ---
 
@@ -79,6 +95,8 @@ The project is designed as a **monorepo** containing two main applications:
 
 ## 🏗️ Architecture
 
+### System Architecture Overview
+
 ```mermaid
 graph TB
     subgraph "Frontend (React + TypeScript)"
@@ -113,6 +131,46 @@ graph TB
     J -->|File Operations| O
     C -->|Image Upload| P
 ```
+
+### Class Diagram
+
+![AllegroLike Class Diagram](./AllegroLikeClassDiagram.png)
+
+The class diagram above shows the detailed relationships between all entities in the system, including:
+- **Entity Relationships**: One-to-Many, Many-to-One, and One-to-One relationships
+- **Inheritance Hierarchies**: User roles and entity abstractions
+- **Service Layer Architecture**: Business logic and data access patterns
+- **Controller Layer**: REST API endpoints and request/response handling
+
+---
+
+## 📊 System Diagrams
+
+### Use Case Diagram
+![AllegroLike Use Case Diagram](./AllegroLikeUseCase.png)
+
+**Shows the functional requirements and user interactions:**
+- **Guest User**: Login, Register, Create Profile
+- **Registered User**: Search Products, Add to Cart, Place Orders, Leave Reviews, Edit Profile
+- **Admin User**: Manage Products, Manage Orders, Manage Users
+
+### UML Class Diagram
+![AllegroLike Class Diagram](./AllegroLikeClassDiagram.png)
+
+**Illustrates the system's object-oriented design:**
+- Entity classes with attributes and methods
+- Relationships and dependencies between classes
+- Service layer and controller architecture
+- Data access patterns and repositories
+
+### Entity Relationship Diagram (ERD)
+![AllegroLike ERD](./AllegroLikeERD.png)
+
+**Details the database structure:**
+- All database tables with fields and data types
+- Primary key and foreign key relationships
+- Constraints and referential integrity rules
+- Cardinality between related entities
 
 ---
 
@@ -209,6 +267,7 @@ AllegroLike/
 │   └── docker-compose.yaml              # Database setup
 │
 ├── 📁 docs/                             # Documentation
+├── 📄 docs.pdf                          # Complete project documentation (PDF)
 ├── AllegroLikeUseCase.png               # Use case diagram
 ├── AllegroLikeClassDiagram.png          # UML class diagram
 ├── AllegroLikeERD.png                   # Entity relationship diagram
@@ -417,16 +476,27 @@ The application uses the following main entities:
 - **Cart & CartItem**: Shopping cart functionality
 - **Order & OrderItem**: Order management system
 - **Address**: User shipping addresses
+- **Reviews**: Product reviews and ratings system
 
 ### Entity Relationships
 - User has one Cart (One-to-One)
 - User has many Orders (One-to-Many)
 - User has many Addresses (One-to-Many)
+- User has many Reviews (One-to-Many)
 - Product belongs to Category (Many-to-One)
+- Product has many Reviews (One-to-Many)
 - Cart has many CartItems (One-to-Many)
 - Order has many OrderItems (One-to-Many)
 
+### Database Entity Relationship Diagram
+
 ![Entity Relationship Diagram](./AllegroLikeERD.png)
+
+The ERD above illustrates:
+- **Primary and Foreign Key relationships** between all entities
+- **Data types and constraints** for each field
+- **Cardinality relationships** (1:1, 1:N, N:M) between entities
+- **Referential integrity** and cascade operations
 
 ---
 
@@ -560,7 +630,6 @@ The project includes GitHub Actions workflows for automated testing:
    - Implement business logic in `services/`
    - Create new controllers in `controllers/`
    - Add database migrations in `resources/db/changelog/`
-
 
 ---
 
